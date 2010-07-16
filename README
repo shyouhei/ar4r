@@ -1,0 +1,39 @@
+AR4R ARToolKit Ruby Binding
+===========================
+
+INSTALLATION
+------------
+
+    ruby extconf.rb
+    make
+    make install
+
+Note:
+
+- ARToolKit is mandatory of course.
+- Optionally needs an OpenGL implementation if you want vide see-thorough
+- Optionally needs GLUT if you want to use argXYZ() series API
+- Optionally needs jpeglib if you want to use jpeg textures
+- Optionally needs libpng if you want to use png textures
+
+USAGE
+-----
+
+Consult the examples.
+
+LICENSING
+---------
+
+Please be sure, that the ARToolKit library itself is distribured under
+GPL.  When you link ARToolKit with Ruby, that linked Ruby executable
+can no longer be redistributed under the (narrow definition of) Ruby's
+Licennse. This binding itself is under MIT-style license (which is
+compatible with GPL) though.
+
+
+AUTHORS
+-------
+
+GLMetaseq.{ch} are by Sunao Hashimoto and Keisuke Konishi.
+
+Other materials are by Network Applied Communication Lab., Japan.
