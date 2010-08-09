@@ -30,7 +30,7 @@ have_header "AR/video.h" or abort
 have_library "libARvideo", "arVideoOpen" or abort
 
 # opengl
-case RUBY_PLATFORM when /win32/, /cygwin/
+case RUBY_PLATFORM when /win32/, /cygwin/, /mingw32/
   have_library "opengl32" and
   have_library "glu32"
 else
@@ -45,7 +45,7 @@ have_header "AR/gsub_lite.h" and
 have_library "libARgsub_lite", "arglSetupForCurrentContext" and
 
 # glut
-case RUBY_PLATFORM when /win32/, /cygwin/
+case RUBY_PLATFORM when /win32/, /cygwin/, /mingw32/
   have_library "glut32"
 else
   have_library "glut"
