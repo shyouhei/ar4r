@@ -2,10 +2,10 @@
 #
 # Permission is hereby granted, free of  charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
-# in the code  without restriction, including without limitation  the rights to
-# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-# of the software,  and to permit persons to whom the  software is furnished to
-# do so, subject to the following conditions:
+# in the software without  restriction, including without limitation the rights
+# to  use, copy, modify,  merge, publish,  distribute, sublicense,  and/or sell
+# copies  of the  software,  and to  permit  persons to  whom  the software  is
+# furnished to do so, subject to the following conditions:
 #
 #        The above copyright notice and this permission notice shall be
 #        included in all copies or substantial portions of the software.
@@ -52,7 +52,7 @@ class ARWebKit < Qt::WebPage
 	slots 'rasterize(bool)'
 	Slot1 = SLOT 'rasterize(int)'
 	Slot2 = SLOT 'rasterize(bool)'
-	
+
 	attr_reader :image
 
 	def initialize driver
@@ -121,7 +121,7 @@ class ARWidget < Qt::GLWidget
 				 [[0, 1], [-width/2, 0, gap + height]],
 				 [[0, 0], [-width/2, 0, gap]]].each do |((cx, cy), (px, py, pz))|
 					GL.TexCoord2f cx, cy
-					GL.Vertex3f  px, py, pz
+					GL.Vertex3f px, py, pz
 				end
 			GL.End
 		GL.EndList
@@ -133,11 +133,11 @@ class ARWidget < Qt::GLWidget
 		@web.load ARGV[0]
 		start_timer 1000/15
 	end
-	
+
 	def timerEvent ev
 		updateGL
 	end
-	
+
 	def resizeGL x, y
 		GL.Viewport 0, 0, x, y
 		GL.MatrixMode GL::PROJECTION
@@ -145,7 +145,7 @@ class ARWidget < Qt::GLWidget
 		GL.MatrixMode GL::MODELVIEW
 		GL.LoadIdentity
 	end
-	
+
 	def paintGL
 		return unless image = AR.video_get_image
 		GL.DrawBuffer GL::BACK
@@ -154,7 +154,7 @@ class ARWidget < Qt::GLWidget
 		GL.Disable GL::BLEND
 		@ctx.disp_image image, @cparam, 1.0
 		AR.video_cap_next
-	
+
 		return unless marker_info = image.detect_marker(80)
 		return unless k = marker_info.select {|i| i.id == @patt }.max_by {|i| i.cf }
 		return unless trans = k.trans_mat([0, 0], 2, @hysteresis)
@@ -165,7 +165,7 @@ class ARWidget < Qt::GLWidget
 		GL.LoadMatrix @camera_frustum
 		GL.MatrixMode GL::MODELVIEW
 		GL.LoadMatrix m
-	
+
 		GL.PushMatrix
 		GL.CallList @list
 		GL.PopMatrix

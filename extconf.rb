@@ -2,10 +2,10 @@
 #
 # Permission is hereby granted, free of  charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
-# in the code  without restriction, including without limitation  the rights to
-# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-# of the software,  and to permit persons to whom the  software is furnished to
-# do so, subject to the following conditions:
+# in the software without  restriction, including without limitation the rights
+# to  use, copy, modify,  merge, publish,  distribute, sublicense,  and/or sell
+# copies  of the  software,  and to  permit  persons to  whom  the software  is
+# furnished to do so, subject to the following conditions:
 #
 #        The above copyright notice and this permission notice shall be
 #        included in all copies or substantial portions of the software.
@@ -63,3 +63,15 @@ have_library "z"
 
 create_header
 create_makefile "ar"
+
+#
+# Local Variables:
+# mode: ruby
+# coding: utf-8
+# indent-tabs-mode: t
+# tab-width: 3
+# ruby-indent-level: 3
+# fill-column: 79
+# default-justification: full
+# End:
+# vi: ts=3 sw=3
